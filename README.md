@@ -1,3 +1,2 @@
 # MikuMikuLive
-MikuMikuLive是一个虚拟歌姬演唱会（全息）的编写放映工具集
 施工中……
