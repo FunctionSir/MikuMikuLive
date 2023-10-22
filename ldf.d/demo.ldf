@@ -1,7 +1,10 @@
 # OFFICIAL DEMO OF MML LDF.
 # By: Guo Yapze, Qu Zhixuan, Pu Zhengyu, Sun Longyu, Zhang Yuntao, Peng Huanran, Yang Qihao.
 # Suitable for a computer with a screen of 1920x1080 best.
+# 这种文件格式可以看作XML和INI文件一夜情的产物. 注意: 大小写敏感.
+# 可以这样写注释. 但注释只能在单独的一行, 不能写在行尾.
 <BEGIN-FFMPEG-CONF>
+# 对于Linux来说, 如果通过包管理器安装了FFMpeg的话, 这个一般可以直接使用.
 [FFPLAY]
 Exec = ffplay
 [FFPROBE]
@@ -9,14 +12,24 @@ Exec = ffprobe
 <END-FFMPEG-CONF>
 <BEGIN-DISPLAY-CONF>
 [DISP0]
+# 这是INIT时用的MEDIA.
 Default = BLANK
+# 就是FFPlay里的-left, -top, -x, -y.
+# Left, Top用于指定位置. Width, Height用于指定大小.
 Left = 0
 Top = 0
 Width = 1920
 Height = 1080
+#[DISP1]
+#Default = BLANK
+#Left = 1921
+#Top = 0
+#Width = 1024
+#Height = 768
 <END-DISPLAY-CONF>
 <BEGIN-MEDIA-CONF>
 [BLANK]
+# File可以为相对路径, 也可以是绝对路径.
 File = media.d/blank.png
 [IMG0]
 File = media.d/demo.media/0.png
@@ -24,8 +37,18 @@ File = media.d/demo.media/0.png
 File = media.d/demo.media/1.png
 [IMG2]
 File = media.d/demo.media/2.png
+#[VID0]
+#File = media.d/dummy.ogv
+# 设置无视频.
+# 如果是mp3这类音频, 其实也是可以加这个的, 这样也许可以避免一些覆盖问题.
+#NoVideo = true
+# 设置无音频.
+#NoAudio = true
+# 设置循环次数.
+#Loop = 100
 <END-MEDIA-CONF>
 <BEGIN-SCENE-CONF>
+# 注意, 您的Scene名不应为"(nil)", 且Scene名是大小写敏感的.
 [SCENE0]
 Play = IMG0@DISP0
 Dur = T:20s
@@ -35,4 +58,11 @@ Dur = T:20s
 [SCENE2]
 Play = IMG2@DISP0
 Dur = T:20s
+#[SCENE3]
+# Play用于指定媒体和显示器, 加号用来表示同时放.
+# 注意, 播放时排在后面的会把前面的的压在下面. 另外, +和@两侧请勿加空格.
+#Play = VID0@DISP0+IMG2@DISP1+IMG1@DISP0
+# Dur用于指定持续时间, T:xxx可以指定一个时长, 请务必加上单位. 如T:20s.
+# M:xxx可以用一个媒体持续的时间作为时长, 相当于T:<DUR_OF_SPECIFIED_MEDIA>.
+#Dur = M:VID0
 <END-SCENE-CONF>
