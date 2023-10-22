@@ -2,7 +2,7 @@
  * @Author: Guo Yaoze, Qu Zhixuan, Sun Longyu, Pu Zhengyu, Zhang Yuntao, Peng Huanran, Yang Qihao
  * @License: AGPLv3
  * @Date: 2023-10-19 23:19:31
- * @LastEditTime: 2023-10-22 14:36:50
+ * @LastEditTime: 2023-10-22 20:49:40
  * @Description: Global consts, vars and funcs.
  * @FilePath: /MikuMikuLive/global.go
  */

@@ -2,7 +2,7 @@
  * @Author: Guo Yaoze, Qu Zhixuan, Sun Longyu, Pu Zhengyu, Zhang Yuntao, Peng Huanran, Yang Qihao
  * @License: AGPLv3
  * @Date: 2023-10-19 20:37:06
- * @LastEditTime: 2023-10-22 20:38:43
+ * @LastEditTime: 2023-10-22 20:49:29
  * @Description: README
  * @FilePath: /MikuMikuLive/README.md
 -->
@@ -20,6 +20,8 @@
 6. 一个易于理解的Makefile, 您可以轻松构建这个应用程序. 如果没有您需要的系统/架构组合, 只需要稍微复制更改即可.
 
 ## 使用说明
+
+也许你会问, 如何写LDF? 您可以查看ldf.d/demo.ldf来学习.
 
 ## 当前版本
 

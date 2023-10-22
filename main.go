@@ -2,7 +2,7 @@
  * @Author: Guo Yaoze, Qu Zhixuan, Sun Longyu, Pu Zhengyu, Zhang Yuntao, Peng Huanran, Yang Qihao
  * @License: AGPLv3
  * @Date: 2023-10-19 23:13:43
- * @LastEditTime: 2023-10-22 14:40:26
+ * @LastEditTime: 2023-10-22 20:49:58
  * @Description: The core of the program.
  * @FilePath: /MikuMikuLive/main.go
  */
