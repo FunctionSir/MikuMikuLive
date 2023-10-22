@@ -13,6 +13,8 @@ default:
 	@cp media.d MikuMikuLive -r
 	@cp conf.d MikuMikuLive -r
 	@cp ldf.d MikuMikuLive -r
+	@cp README.md MikuMikuLive
+	@cp LICENSE MikuMikuLive
 	@echo Done! You can copy/move the dir MikuMikuLive to anywhere you want and use it.
 
 linux-amd64:
@@ -29,6 +31,8 @@ linux-amd64:
 	@cp media.d MikuMikuLive -r
 	@cp conf.d MikuMikuLive -r
 	@cp ldf.d MikuMikuLive -r
+	@cp README.md MikuMikuLive
+	@cp LICENSE MikuMikuLive
 	@echo Done! You can copy/move the dir MikuMikuLive to anywhere you want and use it.
 
 linux-arm64:
@@ -45,6 +49,8 @@ linux-arm64:
 	@cp media.d MikuMikuLive -r
 	@cp conf.d MikuMikuLive -r
 	@cp ldf.d MikuMikuLive -r
+	@cp README.md MikuMikuLive
+	@cp LICENSE MikuMikuLive
 	@echo Done! You can copy/move the dir MikuMikuLive to anywhere you want and use it.
 
 linux-ppc64le:
@@ -61,6 +67,8 @@ linux-ppc64le:
 	@cp media.d MikuMikuLive -r
 	@cp conf.d MikuMikuLive -r
 	@cp ldf.d MikuMikuLive -r
+	@cp README.md MikuMikuLive
+	@cp LICENSE MikuMikuLive
 	@echo Done! You can copy/move the dir MikuMikuLive to anywhere you want and use it.
 
 freebsd-amd64:
@@ -77,6 +85,8 @@ freebsd-amd64:
 	@cp media.d MikuMikuLive -r
 	@cp conf.d MikuMikuLive -r
 	@cp ldf.d MikuMikuLive -r
+	@cp README.md MikuMikuLive
+	@cp LICENSE MikuMikuLive
 	@echo Done! You can copy/move the dir MikuMikuLive to anywhere you want and use it.
 
 freebsd-arm64:
@@ -93,6 +103,8 @@ freebsd-arm64:
 	@cp media.d MikuMikuLive -r
 	@cp conf.d MikuMikuLive -r
 	@cp ldf.d MikuMikuLive -r
+	@cp README.md MikuMikuLive
+	@cp LICENSE MikuMikuLive
 	@echo Done! You can copy/move the dir MikuMikuLive to anywhere you want and use it.
 
 windows-amd64:
@@ -109,6 +121,8 @@ windows-amd64:
 	@cp media.d MikuMikuLive -r
 	@cp conf.d MikuMikuLive -r
 	@cp ldf.d MikuMikuLive -r
+	@cp README.md MikuMikuLive
+	@cp LICENSE MikuMikuLive
 	@echo Done! You can copy/move the dir MikuMikuLive to anywhere you want and use it.
 
 windows-arm64:
@@ -125,6 +139,8 @@ windows-arm64:
 	@cp media.d MikuMikuLive -r
 	@cp conf.d MikuMikuLive -r
 	@cp ldf.d MikuMikuLive -r
+	@cp README.md MikuMikuLive
+	@cp LICENSE MikuMikuLive
 	@echo Done! You can copy/move the dir MikuMikuLive to anywhere you want and use it.
 
 clean:
