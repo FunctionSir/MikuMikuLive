@@ -1,0 +1,38 @@
+# OFFICIAL DEMO OF MML LDF.
+# By: Guo Yapze, Qu Zhixuan, Pu Zhengyu, Sun Longyu, Zhang Yuntao, Peng Huanran, Yang Qihao.
+# Suitable for a computer with a screen of 1920x1080 best.
+<BEGIN-FFMPEG-CONF>
+[FFPLAY]
+Exec = ffplay
+[FFPROBE]
+Exec = ffprobe
+<END-FFMPEG-CONF>
+<BEGIN-DISPLAY-CONF>
+[DISP0]
+Default = BLANK
+Left = 0
+Top = 0
+Width = 1920
+Height = 1080
+<END-DISPLAY-CONF>
+<BEGIN-MEDIA-CONF>
+[BLANK]
+File = media.d/blank.png
+[IMG0]
+File = media.d/demo.media/0.png
+[IMG1]
+File = media.d/demo.media/1.png
+[IMG2]
+File = media.d/demo.media/2.png
+<END-MEDIA-CONF>
+<BEGIN-SCENE-CONF>
+[SCENE0]
+Play = IMG0@DISP0
+Dur = T:20s
+[SCENE1]
+Play = IMG1@DISP0
+Dur = T:20s
+[SCENE2]
+Play = IMG2@DISP0
+Dur = T:20s
+<END-SCENE-CONF>
