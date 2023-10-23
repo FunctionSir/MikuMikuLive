@@ -2,7 +2,7 @@
  * @Author: Guo Yaoze, Qu Zhixuan, Sun Longyu, Pu Zhengyu, Zhang Yuntao, Peng Huanran, Yang Qihao
  * @License: AGPLv3
  * @Date: 2023-10-19 20:37:06
- * @LastEditTime: 2023-10-22 23:01:23
+ * @LastEditTime: 2023-10-23 11:39:43
  * @Description: README
  * @FilePath: /MikuMikuLive/README.md
 -->
@@ -60,6 +60,7 @@ Yang Qihao(<Yqh0715@outlook.com>)
 |               AGPLv3                |              Innovating Without Patents              |
 |-------------------------------------|------------------------------------------------------|
 |![agpl_v3](media.d/agpl-v3.png)      |![patent_free](media.d/innovating-without-patents.png)|
+
 参见: <https://www.gnu.org/licenses/agpl-3.0.html>, <https://endsoftwarepatents.org/>
 
 ## XXX
