@@ -2,7 +2,7 @@
  * @Author: FunctionSir
  * @License: AGPLv3
  * @Date: 2023-10-20 14:03:25
- * @LastEditTime: 2023-10-22 20:49:36
+ * @LastEditTime: 2023-10-24 19:28:30
  * @LastEditors: FunctionSir
  * @Description:
  * @FilePath: /MikuMikuLive/controller.go
@@ -152,7 +152,7 @@ func Controller() {
 			}
 			Pause()
 		case "I", "i":
-			Disp_init()
+			Disp_init(true)
 		case "F", "f":
 			QuitAutoPlay = true
 			time.Sleep(10 * time.Millisecond)

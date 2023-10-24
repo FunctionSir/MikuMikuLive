@@ -25,3 +25,9 @@ go.work
 
 # VSCode/VSCodium files
 .vscode
+
+# Tmp dir
+tmp
+
+# Maked file
+MikuMikuLive

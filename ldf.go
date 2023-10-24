@@ -2,7 +2,7 @@
  * @Author: FunctionSir
  * @License: AGPLv3
  * @Date: 2023-10-20 13:01:43
- * @LastEditTime: 2023-10-22 20:49:53
+ * @LastEditTime: 2023-10-24 19:44:07
  * @LastEditors: FunctionSir
  * @Description:
  * @FilePath: /MikuMikuLive/ldf.go
@@ -95,8 +95,10 @@ func Conf_loader() {
 	return
 }
 
-func Disp_init() {
-	QuitAutoPlay = true
+func Disp_init(quitAutoPlay bool) {
+	if quitAutoPlay {
+		QuitAutoPlay = true
+	}
 	RstDurController = true
 	time.Sleep(10 * time.Millisecond)
 	Kill_all_ffplay()
@@ -149,7 +151,7 @@ func dur_controller(scene string) {
 		Err_handle(err)
 		for i := time.Duration(0); i < dur; i += 1 * time.Millisecond {
 			switch RstDurController {
-			case true:
+			case false:
 				time.Sleep(1 * time.Millisecond)
 			default:
 				return
@@ -159,7 +161,7 @@ func dur_controller(scene string) {
 	} else if splitedKeyDur[0] == "M" {
 		for i := time.Duration(0); i < Get_video_dur(MediaConf.Section(splitedKeyDur[1]).Key("File").String()); i += 1 * time.Millisecond {
 			switch RstDurController {
-			case true:
+			case false:
 				time.Sleep(1 * time.Millisecond)
 			default:
 				return
@@ -172,7 +174,7 @@ func dur_controller(scene string) {
 
 func Auto_play() {
 	if !DispInited {
-		Disp_init()
+		Disp_init(false)
 		time.Sleep(4 * time.Second)
 	}
 	if QuitAutoPlay {
@@ -187,25 +189,27 @@ func Auto_play() {
 	}
 	for i := Find_str(sceneSections, LatestScene); SceneConf != nil && len(sceneSections) >= 2 && i != -1 && i < len(sceneSections); i++ {
 		Show_scene(sceneSections[i])
-		splitedKeyDur := strings.Split(SceneConf.Section(sceneSections[i]).Key("Dur").String(), ":")
-		if splitedKeyDur[0] == "T" {
-			dur, err := time.ParseDuration(splitedKeyDur[1])
-			Err_handle(err)
-			for i := time.Duration(0); i < dur; i += 1 * time.Millisecond {
-				switch QuitAutoPlay {
-				case false:
-					time.Sleep(1 * time.Millisecond)
-				default:
-					return
+		if SceneConf.Section(sceneSections[i]).HasKey("Dur") && SceneConf.Section(sceneSections[i]).Key("Dur").String() != "inf" {
+			splitedKeyDur := strings.Split(SceneConf.Section(sceneSections[i]).Key("Dur").String(), ":")
+			if splitedKeyDur[0] == "T" {
+				dur, err := time.ParseDuration(splitedKeyDur[1])
+				Err_handle(err)
+				for i := time.Duration(0); i < dur; i += 1 * time.Millisecond {
+					switch QuitAutoPlay {
+					case false:
+						time.Sleep(1 * time.Millisecond)
+					default:
+						return
+					}
 				}
-			}
-		} else if splitedKeyDur[0] == "M" {
-			for i := time.Duration(0); MediaConf != nil && i < Get_video_dur(MediaConf.Section(splitedKeyDur[1]).Key("File").String()); i += 1 * time.Millisecond {
-				switch QuitAutoPlay {
-				case true:
-					time.Sleep(1 * time.Millisecond)
-				default:
-					return
+			} else if splitedKeyDur[0] == "M" {
+				for i := time.Duration(0); MediaConf != nil && i < Get_video_dur(MediaConf.Section(splitedKeyDur[1]).Key("File").String()); i += 1 * time.Millisecond {
+					switch QuitAutoPlay {
+					case true:
+						time.Sleep(1 * time.Millisecond)
+					default:
+						return
+					}
 				}
 			}
 		}
